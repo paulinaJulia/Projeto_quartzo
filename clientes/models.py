@@ -23,7 +23,7 @@ class Cliente (models.Model):
     rua = models.CharField(
         verbose_name='Rua',
         max_length=16,
-        blank=True, null=True
+        blank=True, null=True 
     )
 
     cidade = models.CharField(
