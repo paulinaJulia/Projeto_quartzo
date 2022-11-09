@@ -5,7 +5,7 @@ class Cliente (models.Model):
 
     nome = models.CharField(
         max_length=100,
-        help_text='Nome do Cliente'
+        verbose_name='Nome do Cliente'
     )
 
     cpf = models.CharField(
@@ -41,7 +41,6 @@ class Cliente (models.Model):
     numero_casa = models.IntegerField(
         verbose_name='Numero da Casa',
         blank=True, null=True,
-        default=75
     )
 
     """email = models.EmailField(
