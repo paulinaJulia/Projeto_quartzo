@@ -1,11 +1,11 @@
 from django.db import models
 
 
-class Cliente (models.Model):
+class Funcionario(models.Model):
 
     nome = models.CharField(
         max_length=100,
-        verbose_name='Nome do Cliente'
+        verbose_name='Nome do Funcionario'
     )
 
     cpf = models.CharField(
@@ -59,3 +59,23 @@ class Cliente (models.Model):
         max_length=16,
         blank=True, null=True
     )
+
+    NIVEL = [
+        ('Funcionario', 'Funcionario'),
+        ('Gerente', 'Gerente'),
+    ]
+
+    nivel = models.CharField(
+        verbose_name='Nivel',
+        max_length=100,
+        choices = NIVEL,
+        blank = False, null = True
+    )
+
+    def __str__(self):
+        return self.nome
+
+    class Meta:
+        app_label = 'funcionarios'
+        verbose_name = 'Funcionario'
+        verbose_name_plural = 'Funcionarios'

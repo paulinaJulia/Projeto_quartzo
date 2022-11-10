@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teste</title>
+</head>
+<body>
+    <table> 
+        <thead>
+            <tr>
+                <th> {{object.id}}</th>
+                <th>{{object.nome}}</th>
+                <th>{{object.cpf}}</th>
+                <th>{{object.telefone}}</th>
+                <th>{{object.rua}}</th>
+                <th>{{object.cidade}}</th>
+                <th>{{object.bairro}}</th>
+                <th>{{object.numero_casa}}</th>
+                <th>{{object.email}}</th>
+                <th>{{object.senha}}</th>
+                <th>{{object.nivel}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for funcionario in object_list %}
+            <tr>
+                <td> {{funcionario.id}}</td>
+                <td>{{funcionario.nome}}</td>
+                <td>{{funcionario.cpf}}</td>
+                <td>{{funcionario.telefone}}</td>
+                <td>{{funcionario.rua}}</td>
+                <td>{{funcionario.cidade}}</td>
+                <td>{{funcionario.bairro}}</td>
+                <td>{{funcionario.numero_casa}}</td>
+                <td>{{funcionario.email}}</td>
+                <td>{{funcionario.senha}}</td>
+                <td>{{funcionario.nivel}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
