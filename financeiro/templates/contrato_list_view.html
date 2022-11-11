@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teste</title>
+</head>
+<body>
+    <table> 
+        <thead>
+            <tr>
+                <th>{{object.id}}</th>
+                <th>{{object.imovel}}</th>
+                <th>{{object.cliente}}</th>
+                <th>{{object.funcionario}}</th>
+                <th>{{object.inicio}}</th>
+                <th>{{object.termino}}</th>
+                <th>{{object.data_vencimento}}</th>
+                <th>{{object.situacao}}</th>
+                <th>{{object.pagamento}}</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for contrato in object_list %}
+            <tr>
+                <td> {{contrato.id}}</td>
+                <td>{{contrato.imovel}}</td>
+                <td>{{contrato.cliente}}</td>
+                <td>{{contrato.funcionario}}</td>
+                <td>{{contrato.inicio}}</td>
+                <td>{{contrato.termino}}</td>
+                <td>{{contrato.data_vencimento}}</td>
+                <td>{{contrato.situacao}}</td>
+                <td>{{contrato.pagamento}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

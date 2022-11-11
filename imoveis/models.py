@@ -30,15 +30,17 @@ class Imovel(models.Model):
         verbose_name='Numero',
         blank=True, null=True,
     )
-    #observar como usa o float 
+
     valor= models.FloatField(
         verbose_name='Valor',
         blank=True, null=True,
     )
 
     CATEGORIA = [
-        ('Alugar', 'Alugar'),
-        ('Vender', 'Vender'),
+        ('Casa', 'Casa'),
+        ('Apartamento', 'Apartamento'),
+        ('Terreno', 'Terreno'),
+        ('Predio comercial', 'Predio comercial'),
     ]
 
     categoria = models.CharField(
@@ -49,7 +51,7 @@ class Imovel(models.Model):
     )
      
     def __str__(self):
-        return self.rua
+        return self.categoria
 
     class Meta:
         app_label = 'imoveis'

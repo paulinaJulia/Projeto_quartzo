@@ -59,3 +59,6 @@ class Cliente (models.Model):
         max_length=16,
         blank=True, null=True
     )
+
+    def __str__(self):
+        return self.nome
