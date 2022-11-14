@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teste</title>
+</head>
+<body>
+    <table> 
+        <thead>
+            <tr>
+                <th>{{object.id}}</th>
+                <th>{{object.area}}</th>
+                <th>{{object.rua}}</th>
+                <th>{{object.bairro}}</th>
+                <th>{{object.cidade}}</th>
+                <th>{{object.numero}}</th>
+                <th>{{object.valor}}</th>
+                <th>{{object.categoria}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for imovel in object_list %}
+            <tr>
+                <td>{{imovel.id}}</td>
+                <td>{{imovel.area}}</td>
+                <td>{{imovel.rua}}</td>
+                <td>{{imovel.bairro}}</td>
+                <td>{{imovel.cidade}}</td>
+                <td>{{imovel.numero}}</td>
+                <td>{{imovel.valor}}</td>
+                <td>{{imovel.categoria}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

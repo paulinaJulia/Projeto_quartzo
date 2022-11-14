@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>teste</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <p class="bg-red-400">{{form.object.nome}}</p>
+    <p>{{object.cpf}}</p>
+    <p>{{object.telefone}}</p>
+    <p>{{object.rua}}</p>
+    <p>{{object.cidade}}</p>
+    <p>{{object.bairro}}</p>
+    <p>{{object.numero_casa}}</p>
+    <p>{{object.email}}</p>
+    <p>{{object.senha}}</p>
+                
+    <button type='submit' class='mx-auto mt-10 text-white font-medium text-2xl bg-[#20629E] w-96 rounded-3xl grid place-content-center'>CONFIRMA CADASTRO</button>  
+    
+</form>
+
+</body>
+</html>
