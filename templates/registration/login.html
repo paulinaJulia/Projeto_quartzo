@@ -1,11 +1,39 @@
 {%  extends 'base.html' %}
 
 {% block main %}
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit"> Login </button>
-</form>
+<div class="flex ">
+    <div class="h-screen w-5/12 bg-[#5097DA] flex flex-col items-center justify-center px-4">
+        <img src="../../static/bootstrap/images/Logo.png" alt="logo" />
+        <h1 class='font-medium text-4xl mb-28'>FUNCIONÁRIOS</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label class='font-normal text-lg flex flex-col'> CPF
+                <!-- <input class='rounded-3xl w-80 h-12 pl-4 text-2xl' type="text" id="cpf" maxlength="11" /> -->
+                {{form.username}}
+            </label>
+            <label class='font-normal text-lg flex flex-col'> Senha
+                <!-- <input class='rounded-3xl w-80 h-12 pl-4 text-2xl' type="password" id="cpf" maxlength="11" /> -->
+                {{form.password}}
+            </label>
+            <p class='text-black font-medium text-base'>ESQUECEU A SENHA? 
+                <button class='text-white font-medium text-base'>CLIQUE AQUI</button></p>
+            <button type="submit"class='w-80 h-12 text-white font-medium text-2xl bg-[#20629E] mt-4 rounded-3xl'>ENTRAR</button>
+            <p class='text-black font-medium text-base'>CRIE SUA CADASTRO <button class='text-white font-medium text-base'>AQUI</button></p>
+        </form>
+    <div class='flex justify-between items-center w-full'>
+        <button class='flex flex-col items-center'>
+            <img src="../../static/bootstrap/images/client.png" alt="client" />
+            <p>CLIENTES</p>
+        </button>
+        <button class='flex flex-col items-center'>
+            <img src="../../static/bootstrap/images/funcionario.png" alt="funcionario" />
+            <p>FUNCIONÁRIOS</p>
+        </button>
+    </div>
+</div>
+    <div class="">
+        <img class="w-screen h-screen bg-cyan-400" src="../../static/bootstrap/images/residence.png" alt="residence" />
+    </div>
+
+</div>
 {% endblock %}
-
-

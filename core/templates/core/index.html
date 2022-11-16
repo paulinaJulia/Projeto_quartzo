@@ -1,15 +1,117 @@
+
 {% extends 'base.html' %}
 
 {% block main %}
-    <div class="row">
-        <div class="col-sm">
-            basico do nosso template 
-        </div>
-        <div class="col-sm">
-            basico do nosso template 1
-        </div>
-        <div class="col-sm">
-            <a href="{% url 'logout' %}"> Logout </a>
+    <div class="bg-[#83A7C9] drop-shadow-xl">
+        <div class="flex items-center justify-around w-full gap-2">
+            <img class="w-[393px] h-[123px]" src="../../../static/bootstrap/images/Logo.png" alt="logo" />
+            <div class="flex list-none gap-10 text-black font-bold text-1xl">
+                <button id="dropdowncompra" class="relative">
+                    Comprar
+                    <div id="compradropdown" class="hidden absolute">
+                        <div class="grid grid-cols-2 w-[400px] bg-white p-4 gap-2 rounded-3xl">
+                            <!-- <h2 class="text-3xl">Comprar</h2> -->
+                            <a class="flex flex-col items-center justify-center bg-[#000000]/10 py-2 rounded-2xl" href="#">
+                                <img class="w-[40px] h-[40px]" src="../../../static/bootstrap/images/casa.png" alt="casa" />
+                                Casa
+                            </a>
+                            <a class="flex flex-col items-center justify-center bg-[#000000]/10 py-2 rounded-2xl" href="#">
+                                <img class="w-[40px] h-[40px]" src="../../../static/bootstrap/images/predio.png" alt="predio" />
+                                Apartamento
+                            </a>
+                            <a class="flex flex-col items-center justify-center bg-[#000000]/10 py-2 rounded-2xl" href="#">
+                                <img class="w-[40px] h-[40px]" src="../../../static/bootstrap/images/terrenos.svg" alt="terreno" />
+                                Terreno
+                            </a>
+                            <a class="flex flex-col items-center justify-center bg-[#000000]/10 py-2 rounded-2xl" href="#">
+                                <img class="w-[40px] h-[40px]" src="../../../static/bootstrap/images/bolsa.png" alt="bolsa" />
+                                Ponto Comercial
+                            </a>
+                        </div>
+                    </div>
+                </button>
+                <button id="dropdownalugar">
+                    Alugar
+                    <div id="alugardropdown" class="hidden absolute">
+                        <div class="grid grid-cols-2 w-[400px] bg-white p-4 gap-2 rounded-3xl">
+                            <!-- <h2 class="text-3xl">Comprar</h2> -->
+                            <a class="flex flex-col items-center justify-center bg-[#000000]/10 py-2 rounded-2xl" href="#">
+                                <img class="w-[40px] h-[40px]" src="../../../static/bootstrap/images/casa.png" alt="casa" />
+                                Casa
+                            </a>
+                            <a class="flex flex-col items-center justify-center bg-[#000000]/10 py-2 rounded-2xl" href="#">
+                                <img class="w-[40px] h-[40px]" src="../../../static/bootstrap/images/predio.png" alt="predio" />
+                                Apartamento
+                            </a>
+                            <a class="flex flex-col items-center justify-center bg-[#000000]/10 py-2 rounded-2xl" href="#">
+                                <img class="w-[40px] h-[40px]" src="../../../static/bootstrap/images/terrenos.svg" alt="terreno" />
+                                Terreno
+                            </a>
+                            <a class="flex flex-col items-center justify-center bg-[#000000]/10 py-2 rounded-2xl" href="#">
+                                <img class="w-[40px] h-[40px]" src="../../../static/bootstrap/images/bolsa.png" alt="bolsa" />
+                                Ponto Comercial
+                            </a>
+                        </div>
+                </button>
+                <button id="dropdownvenda">
+                    Vender
+                    <div id="vendadropdown" class="hidden absolute">
+                        <div class="grid grid-cols-2 w-[400px] bg-white p-4 gap-2 rounded-3xl">
+                            <!-- <h2 class="text-3xl">Comprar</h2> -->
+                            <a class="flex flex-col items-center justify-center bg-[#000000]/10 py-2 rounded-2xl" href="#">
+                                <img class="w-[40px] h-[40px]" src="../../../static/bootstrap/images/casa.png" alt="casa" />
+                                Casa
+                            </a>
+                            <a class="flex flex-col items-center justify-center bg-[#000000]/10 py-2 rounded-2xl" href="#">
+                                <img class="w-[40px] h-[40px]" src="../../../static/bootstrap/images/predio.png" alt="predio" />
+                                Apartamento
+                            </a>
+                            <a class="flex flex-col items-center justify-center bg-[#000000]/10 py-2 rounded-2xl" href="#">
+                                <img class="w-[40px] h-[40px]" src="../../../static/bootstrap/images/terrenos.svg" alt="terreno" />
+                                Terreno
+                            </a>
+                            <a class="flex flex-col items-center justify-center bg-[#000000]/10 py-2 rounded-2xl" href="#">
+                                <img class="w-[40px] h-[40px]" src="../../../static/bootstrap/images/bolsa.png" alt="bolsa" />
+                                Ponto Comercial
+                            </a>
+                        </div>
+                </button>
+                
+            </div>
+            <div class="relative">
+                <input class="w-[600px] h-[58px] rounde-xl" type="text" />
+                <img class="absolute right-0 top-2 borde-l border-black border-solid " src="../../../static/bootstrap/images/search.png" alt="search" />
+            </div>
+            <div class="relative">
+                <button id="dropdown" class="">
+                    <img src="../../../static/bootstrap/images/person.png" alt="person" />
+                        <div id="menudropdown" class="hidden absolute right-0 bg-white rounded-xl">
+                            <div class="flex flex-col items-start justify-center gap-y-5 p-4">
+                            <p class="font-bold text-2xl self-center text-3xl">Usuário</p>
+                            <a class="flex items-center gap-6 font-bold text-3xl bg-[#000000]/20 w-[400px] rounded-xl py-2">
+                             <img class="w-[50px] h-[50px]" src="../../../static/bootstrap/images/person.png"  alt="person" />  Minhas informações
+                            </a>
+                            <a class="font-bold text-3xl bg-[#000000]/20 w-full rounded-xl p-2">Pagamentos</a>
+                            <a class="flex items-center gap-6 font-bold text-3xl bg-[#000000]/20 w-full rounded-xl p-2"> 
+                                <img class="w-[40px] h-[40px]" src="../../../static/bootstrap/images/bolsa.png" alt="bolsa" /> 
+                                Minhas propriedades
+                            </a>
+                            <a class="font-bold text-3xl bg-[#000000]/20 w-full rounded-xl p-2">Contatar a imobiliaria</a>
+                            <a class="text-[#FF0000] self-center font-bold" href="{% url 'logout' %}"> Sair </a>    
+                        </div>
+                        </div>
+                </button>
+            </div>
         </div>
     </div>
+<div class="flex">
+    <div class="bg-[#577B9B] h-screen w-40 ">
+        asas
+    </div>
+    <div class="w-full bg-[#83A7C9] ">
+        <div>
+            sdsdsds
+        </div>
+    </div>
+</div>
 {% endblock %}
