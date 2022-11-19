@@ -1,5 +1,6 @@
 const dropwdown = document.querySelector('#dropdown');
 const menu = document.querySelector('#menudropdown');
+
 const dropwdowncompra = document.querySelector('#dropdowncompra');
 const compradropdown = document.querySelector('#compradropdown');
 
@@ -11,27 +12,19 @@ const vendadropdown = document.querySelector('#vendadropdown');
 
 
 dropwdown.addEventListener('click', function() {
-    addEventListener('click', function() {
         menu.classList.toggle('hidden');     
-    });
 });
 
 dropwdowncompra.addEventListener('click', function() {
-    addEventListener('click', function() {
-        compradropdown.classList.toggle('hidden');
-    });
+        compradropdown.classList.toggle('hidden')
 });
 
 dropdownalugar.addEventListener('click', function() {
-    addEventListener('click', function() {
-        alugardropdown.classList.toggle('hidden');
-    });
+           alugardropdown.classList.toggle('hidden');
 });
 
-dropdownvenda.addEventListener('click', function() {
-    addEventListener('click', function() {
+dropdownvenda.addEventListener('click', function() {    
         vendadropdown.classList.toggle('hidden');
-    });
-}
-);
+});
 
+// Path: static\bootstrap\js\script.js
