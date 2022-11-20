@@ -16,13 +16,15 @@ class ImovelForm(forms.ModelForm):
     valor = forms.FloatField(label='valor', widget=forms.NumberInput(attrs={'class': 'form-control', 'placeholder':  'Informe o valor'}))
 
     """imagem = forms.ImageField(label='imagem', widget=forms.TextInput(attrs={'type': 'file', 'placeholder':  'Informe o imagem'}))"""
-
     categoria = forms.CharField(label='categoria', widget=forms.Select(attrs={'class': 'form-control'}, choices= [
         ('Casa', 'Casa'),
         ('Apartamento', 'Apartamento'),
         ('Terreno', 'Terreno'),
         ('Predio comercial', 'Predio comercial'),
     ]))
+    descricao = forms.CharField(label='Descricao', widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder':  'Informe a Descricao'}))
+
+    
     class Meta:
         model = Imovel
 
