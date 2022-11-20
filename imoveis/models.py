@@ -63,6 +63,16 @@ class Imovel(models.Model):
         null=True,
     )
 
+    descricao = models.CharField(
+        verbose_name='Descrição do imovel',
+        max_length=500,
+        blank=True,
+        null=True,
+        default=None
+    )
+
+
+
      
     def __str__(self):
         return self.categoria
