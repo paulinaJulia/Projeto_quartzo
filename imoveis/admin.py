@@ -19,3 +19,4 @@ class ImovelAdmin(admin.ModelAdmin):
         'cidade',
         'valor',
     ]
+    

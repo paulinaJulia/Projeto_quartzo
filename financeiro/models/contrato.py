@@ -20,6 +20,19 @@ class Contrato(models.Model):
         Funcionario,
         on_delete=models.PROTECT
     )
+    
+    TIPO_CONTRATO = [
+        ('Compra', 'Compra'),
+        ('Venda', 'Venda'),
+        ('Aluga', 'Aluga'),
+    ]
+
+    tipo_contrato = models.CharField(
+        verbose_name='Categoria',
+        max_length=100,
+        choices = TIPO_CONTRATO,
+        blank = False, null = True
+    )
 
     inicio = models.DateTimeField(
         verbose_name='Data de Inicio',
