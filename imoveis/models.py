@@ -3,7 +3,14 @@ from django.db import models
 # Create your models here.
 from django.db import models
 
-
+#cso queira deixar pegar mais de uma imagem, mas tem que ver como o formulario no front funciona
+"""class ImagemImovel(models.Model):
+     imagem = models.ImageField(
+        upload_to='static/images/',
+        blank=True,
+        null=True,
+    )
+"""
 class Imovel(models.Model):
 
     area = models.CharField(
@@ -49,6 +56,13 @@ class Imovel(models.Model):
         choices = CATEGORIA,
         blank = False, null = True
     )
+
+    imagem = models.ImageField(
+        upload_to='static/images/',
+        blank=True,
+        null=True,
+    )
+
      
     def __str__(self):
         return self.categoria
@@ -57,3 +71,5 @@ class Imovel(models.Model):
         app_label = 'imoveis'
         verbose_name = 'imovel'
         verbose_name_plural = 'imoveis'
+
+

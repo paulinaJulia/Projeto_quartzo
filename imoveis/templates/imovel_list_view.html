@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>teste</title>
 </head>
+{% block main %} 
 <body>
     <table> 
         <thead>
@@ -18,6 +21,7 @@
                 <th>{{object.numero}}</th>
                 <th>{{object.valor}}</th>
                 <th>{{object.categoria}}</th>
+                <th> {{object.imagem}}</th>
             </tr>
         </thead>
         <tbody>
@@ -31,9 +35,20 @@
                 <td>{{imovel.numero}}</td>
                 <td>{{imovel.valor}}</td>
                 <td>{{imovel.categoria}}</td>
+                <td>
+                    <!-- ver por que não pega imagem {{imovel.imagem.url-->
+                    <img src="{{imovel.imagem}}">
+                </td>
             </tr>
+
+            {% empty %}
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <strong>Aviso - </strong> Sem registros
+        </div>
             {% endfor %}
         </tbody>
     </table>
 </body>
+{% endblock %}
 </html>
