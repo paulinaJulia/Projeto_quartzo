@@ -1,18 +1,6 @@
 from django.db import models
 
-# Create your models here.
-from django.db import models
-
-#cso queira deixar pegar mais de uma imagem, mas tem que ver como o formulario no front funciona
-"""class ImagemImovel(models.Model):
-     imagem = models.ImageField(
-        upload_to='static/images/',
-        blank=True,
-        null=True,
-    )
-"""
 class Imovel(models.Model):
-
     area = models.CharField(
         verbose_name='Area',
         max_length=100
@@ -70,8 +58,6 @@ class Imovel(models.Model):
         null=True,
         default=None
     )
-
-
 
      
     def __str__(self):

@@ -104,6 +104,7 @@
             </div>
         </div>
     </div>
+    {% for imovel in list %}
 <div class="flex">
     <div class="bg-[#577B9B] h-screen w-44 ">
         
@@ -111,7 +112,7 @@
     <div class="bg-[#83A7C9] w-full p-8 ">
         <div class="bg-white/30 flex items-center justify-center p-4 gap-4 rounded-2xl">
             <div class="">
-                <img class="h-full w-auto object-fill" src="../../../static/bootstrap/images/casa-2.png" alt="casa-2" />
+                <img class="h-full w-auto object-fill" src="/{{imovel.imagem}}"/>
             </div>
             <div class="flex flex-col gap-8 ">
                 <div class="">
@@ -122,7 +123,10 @@
                 </div>
             </div>
             <div class="bg-white/50 bg-white/30 p-4 w-[400px]">
-                <h1 class="font-semibold text-2xl mb-4">Rua dos alfeneiros,04 - little Whinging</h1>
+                <h1 class="font-semibold text-2xl mb-4"> {{imovel.rua}}</h1>
+                    <h3>{{imovel.bairro}}</h3>
+                    <h3>{{imovel.cidade}}</h3>
+                    <h3>{{imovel.numero}}</h3>
                 <div class="flex items-center justify-start gap-2 mb-4 ">
                     <p class="flex items-center justify-center gap-2 border-r-2 border-solid border-black pr-2">
                         <img class="w-[30px] h-[30px] text-2xl font-bold" src="../../../static/bootstrap/images/casa.png" alt="casa" />
@@ -137,9 +141,9 @@
                         4
                     </p>
                 </div>
-                <p class="font-semibold">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p class="font-semibold">{{imovel.descricao}}</p>
                 <div class="flex items-center justify-between mt-10">
-                    <a href="" class="bg-[#08881C]/60 py-2 px-4 rounded-[20px] text-white">R$1.0000.000</a>
+                    <a href="#" class="bg-[#08881C]/60 py-2 px-4 rounded-[20px] text-white">{{imovel.valor}}</a>
                     <button class="flex flex-col items-center justify-center">
                         <img src="../../../static/bootstrap/images/heart.svg" alt="heart" />
                         Favoritar
@@ -149,4 +153,5 @@
         </div>
     </div>
 </div>
+{% endfor %}
 {% endblock %}
