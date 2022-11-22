@@ -1,6 +1,6 @@
-from .cliente_form import ClienteForm
+from .usuario_form import UsuarioForm
 
 __all__ = [ 
-    ClienteForm,
+    UsuarioForm,
 
 ]

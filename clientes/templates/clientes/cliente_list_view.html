@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teste</title>
+</head>
+<body>
+    <table> 
+        <thead>
+            <tr>
+                <th> {{object.id}}</th>
+                <th>{{object.nome}}</th>
+                <th>{{object.cpf}}</th>
+                <th>{{object.telefone}}</th>
+                <th>{{object.rua}}</th>
+                <th>{{object.cidade}}</th>
+                <th>{{object.bairro}}</th>
+                <th>{{object.numero_casa}}</th>
+                <th>{{object.email}}</th>
+              
+            </tr>
+        </thead>
+        <tbody>
+            {% for cliente in object_list %}
+            <tr>
+                <td> {{cliente.id}}</td>
+                <td>{{cliente.nome}}</td>
+                <td>{{cliente.cpf}}</td>
+                <td>{{cliente.telefone}}</td>
+                <td>{{cliente.rua}}</td>
+                <td>{{cliente.cidade}}</td>
+                <td>{{cliente.bairro}}</td>
+                <td>{{cliente.numero_casa}}</td>
+                <td>{{cliente.email}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

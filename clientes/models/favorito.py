@@ -1,11 +1,11 @@
 from django.db import models
-from .cliente import Cliente
+from .usuario import Usuario
 from imoveis.models import Imovel
 
 class Favorito(models.Model):
  
     usuario =  models.ForeignKey(
-        Cliente,
+        Usuario,
         on_delete=models.PROTECT
     )
 

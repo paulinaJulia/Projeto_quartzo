@@ -1,7 +1,6 @@
 from django.db import models
 from imoveis.models import Imovel
-from clientes.models import Cliente
-from funcionarios.models import Funcionario
+from clientes.models import Usuario
 from .pagamento import Pagamento
 
 class Contrato(models.Model):
@@ -12,13 +11,15 @@ class Contrato(models.Model):
     )
 
     cliente = models.ForeignKey(
-        Cliente,
-        on_delete=models.PROTECT
+        Usuario,
+        on_delete=models.PROTECT,
+        related_name='Cliente'
     )
 
     funcionario = models.ForeignKey(
-        Funcionario,
-        on_delete=models.PROTECT
+        Usuario,
+        on_delete=models.PROTECT,
+        related_name='Funcionario'
     )
     
     TIPO_CONTRATO = [

@@ -1,7 +1,7 @@
-from .cliente import Cliente
+from .usuario import Usuario
 from .favorito import Favorito
 
 __all__ = [ 
-    Cliente,
+    Usuario,
     Favorito,
 ]
