@@ -25,7 +25,7 @@ class Contrato(models.Model):
     TIPO_CONTRATO = [
         ('Compra', 'Compra'),
         ('Venda', 'Venda'),
-        ('Aluga', 'Aluga'),
+        ('Alguel', 'Alguel'),
     ]
 
     tipo_contrato = models.CharField(

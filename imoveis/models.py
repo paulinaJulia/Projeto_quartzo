@@ -50,6 +50,7 @@ class Imovel(models.Model):
         blank=True,
         null=True,
     )
+    
 
     descricao = models.CharField(
         verbose_name='Descrição do imovel',

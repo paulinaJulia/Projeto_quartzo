@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>teste</title>
-</head>
-{% block main %} 
-<body>
-    
+
+{% block style %} 
+    <style> 
+        .imovel-imagem{
+            width:60px;
+            height:60px;
+        }
+    </style>
+{% endblock %}
+
+{% block main %}     
     <!-- Botão para sair da tela de lista-->
     <a href="http://localhost:8000/" class="bg-[#08881C]/60 py-2 px-4 rounded-[20px] text-white">Sair</a>
 
@@ -23,17 +23,18 @@
                 <th>{{object.rua}}</th>
                 <th>{{object.bairro}}</th>
                 <th>{{object.cidade}}</th>
-                <th>{{object.numero}}</th>
                 <th>{{object.valor}}</th>
                 <th>{{object.categoria}}</th>
                 <th> {{object.imagem}}</th>
-                <th>{{object.descricao}}</th>
             </tr>
         </thead>
         <tbody>
             {% for imovel in object_list %}
             <tr>
-                <td>{{imovel.id}}</td>
+                <td>
+                    <!-- icone falta -->
+                    <a href="{% url 'imovel_detail' imovel.id%}">{{imovel.id}}</a>
+                </td>
                 <td>{{imovel.area}}</td>
                 <td>{{imovel.rua}}</td>
                 <td>{{imovel.bairro}}</td>
@@ -41,10 +42,9 @@
                 <td>{{imovel.numero}}</td>
                 <td>{{imovel.valor}}</td>
                 <td>{{imovel.categoria}}</td>
-                <td>{{imovel.descricao}}</td>
                 <td>
                     <!-- ver por que não pega imagem {{imovel.imagem.url-->
-                    <img src="/{{imovel.imagem}}" height="300" width="300">
+                    <img src="/{{imovel.imagem}}" class="imovel-imagem w-16 h-16">
                 </td>
             </tr>
 
@@ -56,7 +56,8 @@
             {% endfor %}
         </tbody>
     </table>
-</body>
 {% endblock %}
-</html>
+
+
+
 

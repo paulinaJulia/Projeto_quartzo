@@ -1,8 +1,15 @@
-<p>{{object.imovel}}</p>
-<p>{{object.cliente}}</p>
-<p>{{object.funcionario}}</p>
-<p>{{object.inicio}}</p>
-<p>{{object.termino}}</p>
-<p>{{object.data_vencimento}}</p>
-<p>{{object.situacao}}</p>
-<p>{{object.pagamento}}</p>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<div class="flex flex-col items-center justify-center bg-[#83A7C9] h-screen">
+    <h1 class="font-bold text-4xl text-black text-center my-10">Detalhes do contrato</h1>
+    <div class="w-[900px] bg-white/30 h-auto grid grid-cols-3 gap-2">
+    <p>IMOVEL:{{object.imovel}}</p>
+    <p>CLIENTE:{{object.cliente}}</p>
+    <p>FUNCIONARIO:{{object.funcionario}}</p>
+    <p>INICIO:{{object.inicio}}</p>
+    <p>TERMINO:{{object.termino}}</p>
+    <p>VENCIMENTO:{{object.data_vencimento}}</p>
+    <p>SITUAÇÃO:{{object.situacao}}</p>
+    <p>PAGAMENTO{{object.pagamento}}</p>
+    </div>
+</div>

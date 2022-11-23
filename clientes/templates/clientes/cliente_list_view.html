@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>teste</title>
 </head>
+{% block main %} 
 <body class="bg-[#83A7C9]">   <!-- {{object.id}}{{funcionario.id}} -->
     <div>
         <h1 class="font-bold text-4xl text-black text-center my-10">Lista de Clientes</h1>
@@ -24,6 +27,7 @@
                             {{object.numero_casa}}
                             {{object.email}}
                             {{object.senha}}
+                            {{object.id}}
                             <p>Nome: {{cliente.nome}}</p>
                             <p>CPF: {{cliente.cpf}}</p>
                             <p>TELEFONE: {{cliente.telefone}}</p>
@@ -33,10 +37,12 @@
                             <p>NUMERO DA CASA:{{cliente.numero_casa}}</p>
                             <p>EMAIL: {{cliente.email}}</p>
                             <p>SENHA: {{cliente.senha}}</p>
+                            <p>id: {{cliente.id}}</p>
                         </div>
                         {% endfor %}
             </div>
         </div>
     </div>
 </body>
+{% endblock %}
 </html>

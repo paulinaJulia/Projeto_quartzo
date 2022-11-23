@@ -1,9 +1,16 @@
-<p>{{object.nome}}</p>
-<p>{{object.cpf}}</p>
-<p>{{object.telefone}}</p>
-<p>{{object.rua}}</p>
-<p>{{object.cidade}}</p>
-<p>{{object.bairro}}</p>
-<p>{{object.numero_casa}}</p>
-<p>{{object.email}}</p>
-<p>{{object.nivel}}</p>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<div class="flex flex-col items-center justify-center bg-[#83A7C9] h-screen">
+    <h1 class="font-bold text-4xl text-black text-center my-10">Detalhes do funcionario</h1>
+    <div class="w-[900px] bg-white/30 h-auto grid grid-cols-3 gap-2">
+    <p>NOME:{{object.nome}}</p>
+    <p>CPF:{{object.cpf}}</p>
+    <p>TELEFONE:{{object.telefone}}</p>
+    <p>RUA:{{object.rua}}</p>
+    <p>CIDADE{{object.cidade}}</p>
+    <p>BAIRRO:{{object.bairro}}</p>
+    <p>NUMERO DA CASA:{{object.numero_casa}}</p>
+    <p>EMAIL:{{object.email}}</p>
+    <p>NIVEL:{{object.nivel}}</p>
+    </div>
+</div>
