@@ -2,23 +2,27 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView
 
-from ...forms import UsuarioForm
+from functions_globais.utils.create_user import create_user
+
+from ...forms import FuncionarioForm
 from ...models import Usuario
 
+from django.contrib.auth.mixins import PermissionRequiredMixin
 
-class FuncionarioCreateView(LoginRequiredMixin, CreateView):
+class FuncionarioCreateView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
+    permission_required = 'clientes.add_funcionario',
+    # Or multiple of permissions:
+    #permission_required = ('polls.view_choice', 'polls.change_choice')
+
     model = Usuario
 
-    form_class = UsuarioForm
+    form_class = FuncionarioForm
 
     template_name = 'funcionarios/funcionario_create_view.html'
 
     def form_valid(self, form):
         form = super().form_valid(form)
-        self.object.nivel = 'Funcionario'
-        self.object.username = self.object.cpf
-        self.object.set_password(self.object.password)
-        self.object.save()
+        create_user(self.object, 'Funcionario') 
         return form
 
 

@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
+from functions_globais.utils.create_permissions import create_permision, create_permissions
+
 class Usuario (AbstractUser):
 
     nome = models.CharField(
@@ -59,9 +61,39 @@ class Usuario (AbstractUser):
     def __str__(self):
         return self.nome
     
+    def save_permissions(self):        
+        if self.nivel == 'Funcionario':
+            def call_permissions(ct):
+                items = [ {
+                    'codename': 'add_imovel',
+                    'name': 'Add imovel'
+                }, 
+                {
+                    'codename': 'add_cliente',
+                    'name': 'Add cliente'
+                }
+                ]
+                permissions = []
+                for item in items:
+                    permissions.append(create_permision(item['codename'], item['name'], ct))
+                return permissions
+
+            create_permissions(self, call_permissions)
+        elif self.nivel == 'Usuario':
+            def call_permissions(ct):
+                items = [ {
+                    'codename': 'add_imovel',
+                    'name': 'Add imovel'
+                },
+                ]
+                permissions = []
+                for item in items:
+                    permissions.append(create_permision(item['codename'], item['name'], ct))
+                return permissions
+                
+            create_permissions(self, call_permissions)
 
     class Meta:
         app_label = 'clientes'
         verbose_name = 'Usuario'
-        verbose_name_plural = 'Usuarios',
-        permissions = []
+        verbose_name_plural = 'Usuarios'

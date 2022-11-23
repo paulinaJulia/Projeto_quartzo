@@ -5,8 +5,9 @@ from django.views.generic.edit import CreateView
 from ..forms import ImovelForm
 from ..models import Imovel
 
-
-class ImovelCreateView(LoginRequiredMixin, CreateView):
+from django.contrib.auth.mixins import PermissionRequiredMixin
+class ImovelCreateView(PermissionRequiredMixin, LoginRequiredMixin, CreateView):
+    permission_required = 'imoveis.add_imovel',
     model = Imovel
 
     form_class = ImovelForm
