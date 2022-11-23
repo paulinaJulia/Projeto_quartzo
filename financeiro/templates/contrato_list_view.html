@@ -4,39 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>teste</title>
 </head>
-<body>
-    <table> 
-        <thead>
-            <tr>
-                <th>{{object.id}}</th>
-                <th>{{object.imovel}}</th>
-                <th>{{object.cliente}}</th>
-                <th>{{object.funcionario}}</th>
-                <th>{{object.inicio}}</th>
-                <th>{{object.termino}}</th>
-                <th>{{object.data_vencimento}}</th>
-                <th>{{object.situacao}}</th>
-                <th>{{object.pagamento}}</th>
+<body class="bg-[#83A7C9]">
+    <div>
+        <h1 class="font-bold text-4xl text-black text-center my-10">Lista de Contratos</h1>
+        <div>
+            <p class="text-center"></p>
+            <div class="w-[800px] h-auto bg-white/30 mx-auto space-y-4 p-8">
+                <div class="flex items-center justify-center flex-wrap gap-2"></div>
+               {{object.id}}
+               {{object.imovel}}
+               {{object.cliente}}
+               {{object.funcionario}}
+               {{object.inicio}}
+               {{object.termino}}
+               {{object.data_vencimento}}
+               {{object.situacao}}
+               {{object.pagamento}}
 
-            </tr>
-        </thead>
-        <tbody>
+        
             {% for contrato in object_list %}
-            <tr>
-                <td> {{contrato.id}}</td>
-                <td>{{contrato.imovel}}</td>
-                <td>{{contrato.cliente}}</td>
-                <td>{{contrato.funcionario}}</td>
-                <td>{{contrato.inicio}}</td>
-                <td>{{contrato.termino}}</td>
-                <td>{{contrato.data_vencimento}}</td>
-                <td>{{contrato.situacao}}</td>
-                <td>{{contrato.pagamento}}</td>
-            </tr>
+                <p>{{contrato.id}}</p>
+                <p>{{contrato.imovel}}</p>
+                <p>{{contrato.cliente}}</p>
+                <p>{{contrato.funcionario}}</p>
+                <p>{{contrato.inicio}}</p>
+                <p>{{contrato.termino}}</p>
+                <p>{{contrato.data_vencimento}}</p>
+                <p>{{contrato.situacao}}</p>
+                <p>{{contrato.pagamento}}</p>
             {% endfor %}
-        </tbody>
-    </table>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

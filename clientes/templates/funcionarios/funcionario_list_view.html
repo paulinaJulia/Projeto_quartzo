@@ -4,42 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>teste</title>
 </head>
-<body>
+<body class="bg-[#83A7C9]">   <!-- {{object.id}}{{funcionario.id}} -->
     <!-- Botão para sair da tela de lista-->
     <a href="http://localhost:8000/" class="bg-[#08881C]/60 py-2 px-4 rounded-[20px] text-white">Sair</a>
-    <table> 
-        <thead>
-            <tr>
-                <th> {{object.id}}</th>
-                <th>{{object.nome}}</th>
-                <th>{{object.cpf}}</th>
-                <th>{{object.telefone}}</th>
-                <th>{{object.rua}}</th>
-                <th>{{object.cidade}}</th>
-                <th>{{object.bairro}}</th>
-                <th>{{object.numero_casa}}</th>
-                <th>{{object.email}}</th>
-                <th>{{object.nivel}}</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for funcionario in object_list %}
-            <tr>
-                <td> {{funcionario.id}}</td>
-                <td>{{funcionario.nome}}</td>
-                <td>{{funcionario.cpf}}</td>
-                <td>{{funcionario.telefone}}</td>
-                <td>{{funcionario.rua}}</td>
-                <td>{{funcionario.cidade}}</td>
-                <td>{{funcionario.bairro}}</td>
-                <td>{{funcionario.numero_casa}}</td>
-                <td>{{funcionario.email}}</td>
-                <td>{{funcionario.nivel}}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <div>
+        <h1 class="font-bold text-4xl text-black text-center my-10">Lista de funcionarios</h1>
+        <div>
+            <p class="text-center"></p>
+            <div class="w-[800px] h-auto bg-white/30 mx-auto space-y-4 p-8">
+                        {% for funcionario in object_list %}
+                        <div class="flex items-center justify-center flex-wrap gap-2">
+                            {{object.nome}}
+                            {{object.cpf}}
+                            {{object.telefone}}
+                            {{object.rua}}
+                            {{object.cidade}}
+                            {{object.bairro}}
+                            {{object.numero_casa}}
+                            {{object.email}}
+                            {{object.senha}}
+                            {{object.nivel}}
+                            <p id="funcID"></p>
+                            <p>Nome: {{funcionario.nome}}</p>
+                            <p>CPF: {{funcionario.cpf}}</p>
+                            <p>TELEFONE: {{funcionario.telefone}}</p>
+                            <p>RUA: {{funcionario.rua}}</p>
+                            <p>CIDADE: {{funcionario.cidade}}</p>
+                            <p>BAIRRO: {{funcionario.bairro}}</p>
+                            <p>NUMERO DA CASA:{{funcionario.numero_casa}}</p>
+                            <p>EMAIL: {{funcionario.email}}</p>
+                            <p>SENHA: {{funcionario.senha}}</p>
+                            <p>NIVEL: {{funcionario.nivel}}</p>
+                        </div>
+                        {% endfor %}
+            </div>
+        </div>
+    </div>
 </body>
 </html>
