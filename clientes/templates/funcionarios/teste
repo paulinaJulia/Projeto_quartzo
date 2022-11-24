@@ -1,0 +1,46 @@
+
+<body class="bg-[#83A7C9]">   <!-- {{object.id}}{{funcionario.id}} -->
+    <!-- Botão para sair da tela de lista-->
+    <a href="http://localhost:8000/" class="bg-[#08881C]/60 py-2 px-4 rounded-[20px] text-white">Sair</a>
+    <div>
+        <h1 class="font-bold text-4xl text-black text-center my-10">Lista de funcionarios</h1>
+        <div>
+            <p class="text-center"></p>
+            <div class="w-[800px] h-auto bg-white/30 mx-auto space-y-4 p-8">
+                        
+                        <div class="flex items-center justify-center flex-wrap gap-2">
+                            {{object.nome}}
+                            {{object.cpf}}
+                            {{object.imagem}}
+                            {{object.telefone}}
+                            {{object.rua}}
+                            {{object.cidade}}
+                            {{object.bairro}}
+                            {{object.numero_casa}}
+                            {{object.email}}
+                            {{object.senha}}
+                            {{object.nivel}}
+                            {{object.id}}
+                            <p id="funcID"></p>
+                            <p>Nome: {{funcionario.nome}}</p>
+                            <p>CPF: {{funcionario.cpf}}</p>
+                            <td>
+                                <!-- ver por que não pega imagem {{imovel.imagem.url-->
+                                <img src="/{{funcionario.imagem}}" class="funcionario-imagem w-16 h-16">
+                            </td>
+                            <p>TELEFONE: </p>
+                            <p>RUA: {{funcionario.rua}}</p>
+                            <p>CIDADE: {{funcionario.cidade}}</p>
+                            <p>BAIRRO: {{funcionario.bairro}}</p>
+                            <p>NUMERO DA CASA:{{funcionario.numero_casa}}</p>
+                            <p>EMAIL: {{funcionario.email}}</p>
+                            <p>SENHA: {{funcionario.senha}}</p>
+                            <p>NIVEL: {{funcionario.nivel}}</p>
+
+                            <p>ID: {{funcionario.id}}</p>
+                        </div>
+                        {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
