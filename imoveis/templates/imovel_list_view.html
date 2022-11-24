@@ -10,53 +10,38 @@
     </style>
 {% endblock %}
 
-{% block main %}     
+{% block main %}    
+<div class="bg-[#5E90BF] h-auto">
+    <h1 class="font-bold text-3xl text-center mb-10">Lista de Imoveis</h1>
     <!-- Botão para sair da tela de lista-->
-    <a href="http://localhost:8000/" class="bg-[#08881C]/60 py-2 px-4 rounded-[20px] text-white">Sair</a>
-
-
-    <table> 
-        <thead>
-            <tr>
-                <th>{{object.id}}</th>
-                <th>{{object.area}}</th>
-                <th>{{object.rua}}</th>
-                <th>{{object.bairro}}</th>
-                <th>{{object.cidade}}</th>
-                <th>{{object.valor}}</th>
-                <th>{{object.categoria}}</th>
-                <th> {{object.imagem}}</th>
-            </tr>
-        </thead>
-        <tbody>
+                {{object.id}}
+                {{object.area}}
+                {{object.rua}}
+                {{object.bairro}}
+                {{object.cidade}}
+                {{object.valor}}
+                {{object.categoria}}
+                {{object.imagem}}
             {% for imovel in object_list %}
-            <tr>
-                <td>
-                    <!-- icone falta -->
-                    <a href="{% url 'imovel_detail' imovel.id%}">{{imovel.id}}</a>
-                </td>
-                <td>{{imovel.area}}</td>
-                <td>{{imovel.rua}}</td>
-                <td>{{imovel.bairro}}</td>
-                <td>{{imovel.cidade}}</td>
-                <td>{{imovel.numero}}</td>
-                <td>{{imovel.valor}}</td>
-                <td>{{imovel.categoria}}</td>
-                <td>
-                    <!-- ver por que não pega imagem {{imovel.imagem.url-->
-                    <img src="/{{imovel.imagem}}" class="imovel-imagem w-16 h-16">
-                </td>
-            </tr>
-
-            {% empty %}
-        <div class="alert alert-info alert-dismissible fade show" role="alert">
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            <strong>Aviso - </strong> Sem registros
-        </div>
-            {% endfor %}
-        </tbody>
-    </table>
-{% endblock %}
+            <div class="w-full flex flex-col items-center justify-center mx-auto gap-[74px]">
+                <div class="bg-white/30 w-[1000px] rounded-lg flex items-center justify-center gap-8 py-10">
+                    <a href="{% url 'imovel_detail' imovel.id%}">
+                        <img src="/{{imovel.imagem}}" class="w-[400px] h-[300px]">
+                    </a>
+                    <div class="flex items-start gap-4 flex-col bg-white/50 w-[400px] h-[300px] rounded-r-lg p-[20px]">
+                        <h2 class="font bold text-2xl text-black">{{imovel.rua}}, - {{imovel.bairro}}</h2>
+                       <p class="font-semibold text-xl text-justify">{{imovel.descricao}}</p>
+                       <a class="bg-[#08881C]/60 py-2 px-4 rounded-[20px] text-white">{{imovel.valor}}</a>
+                    </div>    
+                </div>
+                {% endfor %}
+            </div>
+            
+          
+            <a href="http://localhost:8000/" class="bg-[#08881C]/60 py-2 px-4 rounded-[20px] text-white">Sair</a>
+            
+            {% endblock %}
+</div> 
 
 
 
