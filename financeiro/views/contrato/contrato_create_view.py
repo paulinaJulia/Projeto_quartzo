@@ -1,10 +1,10 @@
-from datetime import timedelta
+from datetime import datetime, timedelta
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView
 
-from financeiro.models import item_pagamento
-from functions_globais.utils.listar_data import days_of_month
+from financeiro.models import ItemPagamento
+from functions_globais.utils.listar_data import dates
 
 from ...forms import ContratoForm
 from ...models import Contrato
@@ -17,29 +17,18 @@ class ContratoCreateView(LoginRequiredMixin, CreateView):
 
     template_name = 'contrato_create.html'
 
-    def form_valid(self, form):
-        def popularItens(total_parcelas, pagamento, imovel, cliente):
-            datas = days_of_month()
-            for i in range(0, total_parcelas):
-                item = item_pagamento()
-                item.numero = i + 1
-                item.date_vencimento = datas[i]
-                item.imovel = imovel
-                item.cliente = cliente
-                item.save()
-                pagamento.items.append(item)
-
-        popularItens(self.total_parcelas, self.pagamento, self.imovel, self.cliente)
-        return super().form_valid(form)
+    def form_valid(self, form): 
+        form = super().form_valid(form)
+        self.object.funcionario = self.request.user
+        self.object.save()
+        return form
 
     def get_success_url(self):        
-
         from functions_globais.redirect import reverse_lazy_plus
-
         return reverse_lazy_plus(
-            'contrato_list',
+            'pagamento_create',
             get_params= {
-                'mensagem_toastify':'Contrato adicionado com sucesso!'
+                'id': self.object.id
             },
             just_uri=True,
         )   

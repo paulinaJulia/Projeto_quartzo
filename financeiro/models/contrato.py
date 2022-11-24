@@ -3,6 +3,7 @@ from imoveis.models import Imovel
 from clientes.models import Usuario
 from .pagamento import Pagamento
 
+
 class Contrato(models.Model):
 
     imovel = models.ForeignKey(
@@ -19,31 +20,32 @@ class Contrato(models.Model):
     funcionario = models.ForeignKey(
         Usuario,
         on_delete=models.PROTECT,
-        related_name='Funcionario'
+        related_name='Funcionario',
+        null=True
     )
-    
+
     TIPO_CONTRATO = [
         ('Compra', 'Compra'),
         ('Venda', 'Venda'),
-        ('Alguel', 'Alguel'),
+        ('Aluga', 'Aluga'),
     ]
 
     tipo_contrato = models.CharField(
         verbose_name='Categoria',
         max_length=100,
-        choices = TIPO_CONTRATO,
-        blank = False, null = True
+        choices=TIPO_CONTRATO,
+        blank=False, null=True
     )
 
     inicio = models.DateTimeField(
         verbose_name='Data de Inicio',
-        null=True, 
+        null=True,
         blank=True
     )
 
     termino = models.DateTimeField(
         verbose_name='Data de termino',
-        null=True, 
+        null=True,
         blank=True
     )
 
@@ -64,13 +66,15 @@ class Contrato(models.Model):
         null=True,
         verbose_name="Situação",
         max_length=500,
-        default= 'Aberto',
-        choices= SITUACAO
+        default='Aberto',
+        choices=SITUACAO
     )
 
     pagamento = models.ForeignKey(
         Pagamento,
-        on_delete=models.PROTECT
+        on_delete=models.PROTECT,
+        null=True,
+        default=None
     )
 
     def __str__(self):

@@ -7,4 +7,5 @@ class ContratoForm(forms.ModelForm):
     class Meta:
         model = Contrato
 
-        fields = '__all__'
+        fields = ['imovel', 'cliente', 'tipo_contrato',
+                  'inicio', 'termino', 'data_vencimento']

@@ -16,6 +16,12 @@ class Usuario (AbstractUser):
         blank=True, null=True
     )
 
+    imagem = models.ImageField(
+        upload_to='static/images/',
+        blank=True,
+        null=True,
+    )
+
     telefone = models.CharField(
         verbose_name='Telefone',
         max_length=16,

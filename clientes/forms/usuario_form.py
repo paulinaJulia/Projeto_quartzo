@@ -7,11 +7,11 @@ class UsuarioForm(forms.ModelForm):
     class Meta: 
         model = Usuario
 
-        fields = ['nome', 'cpf', 'telefone', 'rua', 'cidade', 'bairro','numero_casa', 'email', 'password']
+        fields = ['nome', 'cpf','imagem', 'telefone', 'rua', 'cidade', 'bairro','numero_casa', 'email', 'password']
 
 
 class FuncionarioForm(forms.ModelForm):
     class Meta: 
         model = Usuario
 
-        fields = ['nome', 'cpf', 'telefone', 'rua', 'cidade', 'bairro','numero_casa', 'email', 'password', 'nivel']
+        fields = ['nome', 'cpf','imagem', 'telefone', 'rua', 'cidade', 'bairro','numero_casa', 'email', 'password', 'nivel']

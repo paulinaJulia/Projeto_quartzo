@@ -8,7 +8,7 @@
     <title>teste</title>
 </head>
 <body>
-<form method="post">
+<form method="post" enctype="multipart/form-data">
     <!-- {% csrf_token %}
     {{form.as_p}} 
     <button type="submit" class="btn h-48">Salvar</button>   -->
@@ -22,6 +22,9 @@
             </label>
             <label class="flex flex-col"> CPF
                 {{form.cpf}}
+            </label>
+            <label class="flex flex-col">IMAGEM
+                {{form.imagem}}
             </label>
             <label class="flex flex-col">TELEFONE
                 {{form.telefone}}

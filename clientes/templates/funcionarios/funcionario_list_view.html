@@ -1,12 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>teste</title>
-</head>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %} 
+    <style> 
+        .funcionario-imagem{
+            width:60px;
+            height:60px;
+        }
+    </style>
+{% endblock %}
+
+{% block main %} >
 <body class="bg-[#83A7C9]">   <!-- {{object.id}}{{funcionario.id}} -->
     <!-- Botão para sair da tela de lista-->
     <a href="http://localhost:8000/" class="bg-[#08881C]/60 py-2 px-4 rounded-[20px] text-white">Sair</a>
@@ -19,6 +23,7 @@
                         <div class="flex items-center justify-center flex-wrap gap-2">
                             {{object.nome}}
                             {{object.cpf}}
+                            {{object.imagem}}
                             {{object.telefone}}
                             {{object.rua}}
                             {{object.cidade}}
@@ -31,6 +36,10 @@
                             <p id="funcID"></p>
                             <p>Nome: {{funcionario.nome}}</p>
                             <p>CPF: {{funcionario.cpf}}</p>
+                            <td>
+                                <!-- ver por que não pega imagem {{imovel.imagem.url-->
+                                <img src="/{{funcionario.imagem}}" class="funcionario-imagem w-16 h-16">
+                            </td>
                             <p>TELEFONE: {{funcionario.telefone}}</p>
                             <p>RUA: {{funcionario.rua}}</p>
                             <p>CIDADE: {{funcionario.cidade}}</p>
@@ -47,4 +56,4 @@
         </div>
     </div>
 </body>
-</html>
+{% endblock %}

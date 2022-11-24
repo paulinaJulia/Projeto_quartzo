@@ -15,7 +15,7 @@ class ItemPagamento(BaseModel):
     cliente = models.ForeignKey(
         Usuario,
         on_delete=models.PROTECT,
-        related_name='Cliente'
+        related_name='item_cliente',
     )
 
     valor_parcela= models.FloatField(
@@ -23,7 +23,10 @@ class ItemPagamento(BaseModel):
         blank=True, null=True,
     )
 
-    date_vencimento = None
+    data_vencimento = models.DateTimeField(
+        default=None,
+        null=True
+    )
 
     numero = models.IntegerField(
         verbose_name='Numero',

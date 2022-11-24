@@ -11,26 +11,17 @@
     <form method="post">
         <div class="grid place-content-center bg-[#5097DA] h-screen">
             <img src="../../static/bootstrap/images/Logo.png" alt="logo">
-            <h1 class="font-medium text-4xl text-center mb-10">Cadastro Contrato </h1>
+            <h1 class="font-medium text-4xl text-center mb-10">Cadastro Pagamento </h1>
             {% csrf_token %}
         <div class="grid grid-cols-2 gap-x-80">
-                <label class="flex flex-col">Imovel
-                    {{form.imovel}}
+                <label class="flex flex-col">Valor
+                    <p>{{valor_contrato}}</p>
                 </label>
-                <label class="flex flex-col"> cliente
-                    {{form.cliente}}
+                <label class="flex flex-col">Total Parcelas
+                    {{form.total_parcelas}}
                 </label>
-                <label class="flex flex-col">tipo_contrato
-                    {{form.tipo_contrato}}
-                </label>
-                <label class="flex flex-col">inicio
-                    {{form.inicio}}
-                </label>
-                <label class="flex flex-col">termino
-                    {{form.termino}}
-                </label>
-                <label class="flex flex-col">data_vencimento
-                    {{form.data_vencimento}}
+                <label class="flex flex-col">Forma Pagamento
+                    {{form.forma_pagamento}}
                 </label>
                 
         </div>
