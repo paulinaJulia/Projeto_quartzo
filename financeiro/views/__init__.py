@@ -1,11 +1,13 @@
-from .contrato import  ContratoCreateView, ContratoDeleteView, ContratoDetailView, ContratoListView, ContratoUpdateView
-from .pagamento import PagamentoCreateView
+from .contrato import ContratoCreateView, ContratoDeleteView, ContratoDetailView, ContratoListView, ContratoUpdateView
+from .pagamento import PagamentoCreateView, PagamentoDetailView, PagamentoListView
 
-__all__ = [ 
+__all__ = [
     ContratoCreateView,
     ContratoDeleteView,
     ContratoDetailView,
     ContratoListView,
     ContratoUpdateView,
-    PagamentoCreateView
+    PagamentoCreateView,
+    PagamentoDetailView,
+    PagamentoListView
 ]

@@ -91,7 +91,7 @@
                     {% if not request.user.imagem %}
                     <img src="../../../static/bootstrap/images/person.png" alt="person" />
                     {% else %}
-                    <img src="/{{request.user.imagem}}" alt="person" />
+                    <img src="/{{request.user.imagem}}" width="90" alt="person" />
                     {% endif %}
                         <div id="menudropdown" class="hidden absolute right-0 bg-white rounded-xl">
                             <div class="flex flex-col items-start justify-center gap-y-5 p-4">
@@ -99,8 +99,10 @@
                             <a href="usuario/cliente-detail/{{request.user.id}}" class="flex items-center gap-6 font-bold text-3xl bg-[#000000]/20 w-[400px] rounded-xl py-2">
                              <img class="w-[50px] h-[50px]" src="../../../static/bootstrap/images/person.png"  alt="person" />  Minhas informações
                             </a>
-                            <a href="/request.user.id" class="font-bold text-3xl bg-[#000000]/20 w-full rounded-xl p-2">Pagamentos</a>
-                            <a class="flex items-center gap-6 font-bold text-3xl bg-[#000000]/20 w-full rounded-xl p-2"> 
+                            {% if request.user.nivel == 'Usuario' %}
+                            <a href="/financeiro/pagamento-list/?id={{request.user.id}}" class="font-bold text-3xl bg-[#000000]/20 w-full rounded-xl p-2">Pagamentos</a>
+                            {% endif %}
+                            <a href="/imovel/imovel-list?myImoveis=true" class="flex items-center gap-6 font-bold text-3xl bg-[#000000]/20 w-full rounded-xl p-2"> 
                                 <img class="w-[40px] h-[40px]" src="../../../static/bootstrap/images/bolsa.png" alt="bolsa" /> 
                                 Minhas propriedades
                             </a>

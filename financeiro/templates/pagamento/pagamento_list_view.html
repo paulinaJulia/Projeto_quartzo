@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://cdn.tailwindcss.com"></script>
+		<title>teste</title>
+	</head>
+	<body class="bg-[#83A7C9]">
+		<div>
+			<h1 class="font-bold text-4xl text-black text-center my-10">
+				Lista de Pagamentos
+			</h1>
+			<div>
+				<p class="text-center"></p>
+				<div class="w-[800px] h-auto bg-white/30 mx-auto space-y-4 p-8">
+					<div class="flex items-center justify-center flex-wrap gap-2"></div>
+					{{object.id}} {{object.valor}} {{object.total_parcelas}}
+					{{object.forma_pagamento}} {% for pagamento in object_list %}
+					<p>{{pagamento.id}}</p>
+					<p>{{pagamento.valor}}</p>
+					<p>{{pagamento.total_parcelas}}</p>
+					<p>{{pagamento.forma_pagamento}}</p>
+					<a href="/financeiro/pagamento-detail/{{pagamento.id}}">Detalhe</a>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
