@@ -44,3 +44,62 @@
         </div>
     </div>
 </body>
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %} 
+    <style> 
+        .funcionario-imagem{
+            width:60px;
+            height:60px;
+        }
+    </style>
+{% endblock %}
+
+{% block main %}
+
+<!-- Container for demo purpose -->
+<div class="my-24 px-6 mx-auto">
+
+    <!-- Section: Design Block -->
+    <section class="mb-32 text-gray-800 text-center bg-red-400 flex gap-4">
+      <h2 class="text-3xl font-bold mb-32">Lista de funcionarios</h2> 
+    
+      <div class="grid gap-x-6 lg:gap-x-12 md:grid-cols-3">
+        <div class="mb-24 md:mb-0">
+          <div class="rounded-lg shadow-lg h-full block bg-white">
+            <div class="flex justify-center">
+              <div class="flex justify-center" style="margin-top: -75px">
+                {% for funcionario in object_list %}
+                <img src="/{{funcionario.imagem}}" class="rounded-full mx-auto shadow-lg" alt=""
+                  style="width: 150px" />
+              </div>
+            </div>
+            
+            <div class="p-6">
+
+              <h5 class="text-lg font-bold mb-4">{{funcionario.nome}}</h5>
+              <p class="mb-6">{{funcionario.cpf}}</p>
+              <ul class="list-inside flex mx-auto justify-center">
+                <a href="#!" class="px-2 flex items-center justify-center gap-2">
+                <img src="../../../static/images/telefone.svg" class="rounded-full mx-auto shadow-lg w-4 h-4" alt="" />
+                <p class="hidden hover:block">{{funcionario.telefone}} </p>
+                </a>
+                <a href="#!" class="px-2">
+                <img src="../../../static/images/email.png" class="rounded-full mx-auto shadow-lg w-4 h-4" alt="" />
+                    <p class="hidden hover:block">{{funcionario.email}} </p>
+                    </a>
+                </a>  
+              </ul>
+            </div>
+            {% endfor %}
+          </div>
+        </div>      
+      </div>
+     
+    </section>
+    <!-- Section: Design Block -->
+</div>
+ 
+{% endblock %}

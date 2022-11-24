@@ -13,47 +13,52 @@
 {% block main %}
 
 <!-- Container for demo purpose -->
-<div class=" mx-auto bg-[#83A7C9] h-screen">
+<div class=" mx-auto bg-[#83A7C9] ">
 
     <!-- Section: Design Block -->
-    <section class="mb-32 text-gray-800 text-center">
-      <h2 class="text-3xl font-bold mb-32">Lista de funcionarios</h2> 
-      {% for funcionario in object_list %}  
-      <div class="flex items-center justify-center flex-row flex-wrap-reverse gap-[150px]">
+    <section class="py-16 text-gray-800 text-center">
+      <h2 class="text-3xl font-bold mb-40">Lista de funcionarios</h2> 
+      <div class="grid gap-x-6 lg:gap-x-12 md:grid-cols-3 gap-y-24 px-12">
+        {% for funcionario in object_list %} 
         <div class="mb-24 md:mb-0">
-          <div class="rounded-lg shadow-lg h-full block bg-white">
-            <div class="flex justify-center">
-              <div class="flex justify-center" style="margin-top: -75px">
-                <img src="/{{funcionario.imagem}}" class="rounded-full mx-auto shadow-lg" alt=""
-                  style="width: 150px" />
-              </div>
-            </div>
+            <div class="rounded-lg shadow-lg h-full block bg-white">
+              <div class="flex justify-center">
+                <div class="flex justify-center" style="margin-top: -75px">
+                    <img src="/{{funcionario.imagem}}" class="rounded-full mx-auto shadow-lg" alt=""
+                    style="width: 150px" />
+
             
-            <div class="p-6 w-[300px] h-[200px] bg-white/30">
-              <h5 class="text-lg font-bold mb-4">{{funcionario.nome}}</h5>
-              <p class="mb-6">{{funcionario.cpf}}</p>
-              <ul class="list-inside flex mx-auto justify-center">
-                <a href="#!" class="px-2 flex items-center justify-center gap-2">
-                <img src="../../../static/images/telefone.svg" class="rounded-full mx-auto shadow-lg w-4 h-4" alt="" />
-                <p class="hidden hover:block">{{funcionario.telefone}} </p>
-                </a>
-                <a href="#!" class="px-2">
-                <img src="../../../static/images/email.png" class="rounded-full mx-auto shadow-lg w-4 h-4" alt="" />
-                    <p class="hidden hover:block">{{funcionario.email}} </p>
+                </div>
+              </div>
+              <div class="p-6">
+                <h5 class="text-lg font-bold mb-4">{{funcionario.nome}}</h5>
+                <p class="mb-6">{{funcionario.cpf}}</p>
+                <ul class="list-inside flex flex-col mx-auto justify-center">
+                  <div class="flex items-center justify-center">
+                    <a href="#!" class="px-2">
+                      <img src="../../../static/images/telefone.svg" class="rounded-full mx-auto shadow-lg w-4 h-4" alt="" />
+
+                      <p class="hidden hover:block">{{funcionario.telefone}} </p>
+                      </a>
                     </a>
-                </a>  
-              </ul>
-              <a href="{% url 'funcionario_detail' funcionario.id%}" class="bg-cyan-500 mt-2 block rounded-lg w-[100px] mx-auto hover:bg-cyan-600">Ver mais</a>
-              
-            </div>
+                    <a href="#!" class="px-2">
+                      <img src="../../../static/images/email.png" class="rounded-full mx-auto shadow-lg w-4 h-4" alt="" />
+                      <p class="hidden hover:block">{{funcionario.email}} </p>
+                      </a>
+                  </div>
+                    <a href="{% url 'funcionario_detail' funcionario.id%}" class="bg-[#08881C]/80 mt-2 block rounded-lg mx-auto hover:bg-[#08881C] px-2">Ver mais</a>
+                    
+                </ul>
+                </div>
+              </div>
+            </div>   
+            {% endfor %}  
           </div>
-        </div>   
-        {% endfor %}  
-      </div>
+        
+        </section>
+         
+        <!-- Section: Design Block -->
+    </div>
     
-    </section>
-     
-    <!-- Section: Design Block -->
-</div>
  
 {% endblock %}
