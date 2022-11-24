@@ -10,8 +10,9 @@
     </style>
 {% endblock %}
 
-{% block main %}    
-<div class="bg-[#5E90BF] h-screen">
+{% block main %}  
+<div class="bg-[#5E90BF]"> 
+<div class=" ">
     <h1 class="font-bold text-3xl text-center mb-10">Lista de Imoveis</h1>
     <!-- Botão para sair da tela de lista-->
                 {{object.id}}
@@ -31,18 +32,22 @@
                     <div class="flex items-start gap-4 flex-col bg-white/50 w-[400px] h-[300px] rounded-r-lg p-[20px]">
                         <h2 class="font bold text-2xl text-black">{{imovel.rua}}, - {{imovel.bairro}}</h2>
                        <p class="font-semibold text-xl text-justify">{{imovel.descricao}}</p>
-                       <a class="bg-[#08881C]/60 py-2 px-4 rounded-[20px] text-white">{{imovel.valor}}</a>
+                        <div class="flex mt-4 w-full justify-between">
+                            <a class="bg-[#08881C]/60 py-2 px-4 rounded-[20px] text-white">{{imovel.valor}}$</a>
+                            <a href="{% url 'imovel_detail' imovel.id%}" class="bg-[#08881C]/60 py-2 px-4 rounded-[20px] text-white">Detalhes</a>
+                        </div>
                     </div>    
                 </div>
                 {% endfor %}
             </div>
             
           
-            <a href="http://localhost:8000/" class="bg-[#08881C]/60 py-2 px-4 rounded-[20px] text-white">Sair</a>
+            <a href="http://localhost:8000/" class="mx-auto mt-4 text-white font-medium text-2xl bg-[#20629E] w-96 rounded-3xl grid place-content-center">Sair</a>
             
-            {% endblock %}
+            
 </div> 
-
+</div>  
+{% endblock %}
 
 
 

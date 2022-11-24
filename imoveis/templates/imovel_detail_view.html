@@ -2,31 +2,34 @@
 {% load static %}
 
 {% block style %} 
-    <style> 
-        .objeto-imagem{
-            width:100px;
-            height:100px;
-        }
-    </style>
 {% endblock %}
 
-{% block main %} 
+{% block main %}
 <script src="https://cdn.tailwindcss.com"></script>
 
 <div class="flex flex-col items-center justify-center bg-[#83A7C9] h-screen">
-    <h1 class="font-bold text-4xl text-black text-center my-10">Detalhes do imovel</h1>
-    <div class="w-[900px] bg-white/30 h-auto grid grid-cols-3 gap-2">
-        <p>AREA:{{object.area}}</p>
-        <p>RUA:{{object.rua}}</p>
-        <p>BAIRRO:{{object.bairro}}</p>
-        <p>CIDADE:{{object.cidade}}</p>
-        <p>NUMERO:{{object.numero}}</p>
-        <p>VALOR:{{object.valor}}</p>
-        <p>CATEGORIA:{{object.categoria}}</p>
-        <p>DESCRIÇÃO:{{object.descricao}}</p>
-        <img src="/{{object.imagem}}" class="objeto-imagem w-160 h-160 hover:scale-150 "> 
+    <h1 class="font-bold text-4xl text-black text-center my-10">Detalhes do Imovel</h1>
+    <div class="w-[900px] bg-white/30 h-auto  flex justify-between">
+    <div class="bg-white/30 w-full h-[300] flex flex-col items-center justify-center">
+        <div class="bg-white/50 w-[400px] h-[300px]  flex flex-col  gap-2 pl-2"> 
+            <p>AREA:{{object.area}}</p>
+            <p>RUA:{{object.rua}}</p>
+            <p>BAIRRO:{{object.bairro}}</p>
+            <p>CIDADE:{{object.cidade}}</p>
+            <p>NUMERO:{{object.numero}}</p>
+            <p>VALOR:{{object.valor}}</p>
+            <p>CATEGORIA:{{object.categoria}}</p>
+            <p>DESCRIÇÃO:{{object.descricao}}</p>
+        </div> 
+        <div class="flex justify-center items-center gap-2">
+            <a href="{% url 'imovel_update' object.id %}"class="bg-[#08881C]/80 mt-2 block rounded-lg mx-auto hover:bg-[#08881C] px-2" >Editar</a>
+            <a href="{% url 'imovel_delete' object.id %}" class="bg-[#08881C]/80 mt-2 block rounded-lg mx-auto hover:bg-[#08881C] px-2">Deletar</a>
+        </div>
     </div>
-    
+    <img src="/{{object.imagem}}" class="objeto-imagem w-[400px] h-[400px] hover:scale-125">
+    </div>
+  
 </div>
-
 {% endblock %}
+
+
