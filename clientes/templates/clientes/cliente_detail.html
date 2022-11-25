@@ -14,21 +14,20 @@
         <div class="bg-white/50 w-[400px] h-[300px]  flex flex-col  gap-2">
             <p>NOME:{{object.nome}} </p>
             <p>CPF:{{object.cpf}}</p>
-            <!-- <img src="/{{object.imagem}}" class="objeto-imagem w-160 h-160"> -->
             <p>TELEFONE:{{object.telefone}}</p>
             <p>RUA:{{object.rua}}</p>
-            <p>CIDADE:{{object.cidade}}</p>
+            <p>CIDADE{{object.cidade}}</p>
             <p>BAIRRO:{{object.bairro}}</p>
             <p>NUMERO DA CASA:{{object.numero_casa}}</p>
             <p>EMAIL:{{object.email}}</p>
-            <p>id:{{object.id}}</p>
+            <p>NIVEL:{{object.nivel}}</p>
         </div>
         <div class="flex justify-center items-center gap-2">
             <a href="{% url 'cliente_update' object.id %}"class="bg-[#08881C]/80 mt-2 block rounded-lg mx-auto hover:bg-[#08881C] px-2" >Editar</a>
             <a href="{% url 'cliente_delete' object.id %}" class="bg-[#08881C]/80 mt-2 block rounded-lg mx-auto hover:bg-[#08881C] px-2">Deletar</a>
         </div>
     </div>
-    <img src="/{{object.imagem}}" class="objeto-imagem w-[400px] h-[400px]">
+    <img src="/{{object.imagem}}" class="objeto-imagem w-[400px] h-[400px]"/>
     </div>
     
 </div>
