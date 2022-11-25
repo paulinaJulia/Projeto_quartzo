@@ -19,22 +19,16 @@
                {{object.cliente}}
                {{object.funcionario}}
                {{object.inicio}}
-               {{object.termino}}
-               {{object.data_vencimento}}
                {{object.situacao}}
-               {{object.pagamento}}
 
         
             {% for contrato in object_list %}
-                <p>{{contrato.id}}</p>
                 <p>{{contrato.imovel}}</p>
                 <p>{{contrato.cliente}}</p>
                 <p>{{contrato.funcionario}}</p>
                 <p>{{contrato.inicio}}</p>
-                <p>{{contrato.termino}}</p>
-                <p>{{contrato.data_vencimento}}</p>
                 <p>{{contrato.situacao}}</p>
-                <p>{{contrato.pagamento}}</p>
+                <a href="{% url 'contrato_detail' contrato.id%}" class="bg-[#08881C]/80 mt-2 block rounded-lg mx-auto hover:bg-[#08881C] px-2">Ver mais</a>
             {% endfor %}
             </div>
         </div>

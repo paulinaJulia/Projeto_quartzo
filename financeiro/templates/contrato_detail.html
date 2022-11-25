@@ -12,4 +12,8 @@
     <p>SITUAÇÃO:{{object.situacao}}</p>
     <p>PAGAMENTO{{object.pagamento}}</p>
     </div>
+    <div class="flex justify-center items-center gap-2">
+        <a href="{% url 'contrato_update' object.id %}"class="bg-[#08881C]/80 mt-2 block rounded-lg mx-auto hover:bg-[#08881C] px-2" >Editar</a>
+        <a href="{% url 'contrato_delete' object.id %}" class="bg-[#08881C]/80 mt-2 block rounded-lg mx-auto hover:bg-[#08881C] px-2">Deletar</a>
+    </div>
 </div>
