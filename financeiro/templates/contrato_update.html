@@ -1,18 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delete</title>
-</head>
-<body>
-    <form method="post">
-    {% csrf_token %}
-        {{form.as_p}}
-        
-        <button type="submit" class="btn secondary h-48">salvar</button>
-        </form>
+{% extends 'base.html' %}
+{% load static %}
 
-</body>
-</html>
+{% block style %} 
+{% endblock %}
+
+
+<script src="https://cdn.tailwindcss.com"></script>
+{% block main %}
+    <div class="grid place-content-center bg-[#5097DA] h-screen ">
+        <img src="../../../static/bootstrap/images/Logo.png" alt="logo" class="mx-auto">
+        <h1 class="font-medium text-4xl text-center mb-10">Editar Contrato</h1>
+        <form method="post" enctype="multipart/form-data">
+
+                {% csrf_token %}
+            <div class="grid grid-cols-2 gap-x-80">
+                    <label class="flex flex-col">Imovel
+                        {{form.imovel}}
+                    </label>
+                    <label class="flex flex-col"> cliente 
+                        {{form.cliente}} 
+                    </label>
+                    
+                    <label class="flex flex-col">tipo_contrato
+                        {{form.tipo_contrato}}
+                    </label>
+                    <label class="flex flex-col">inicio
+                        {{form.inicio}}
+                    </label>
+                    <label class="flex flex-col">termino
+                        {{form.termino}}
+                    </label>
+                    <label class="flex flex-col">data_vencimento
+                        {{form.data_vencimento}}
+                    </label>
+                    
+            </div>
+            <button type="submit" class="mx-auto mt-4 text-white font-medium text-2xl bg-[#20629E] w-96 rounded-3xl grid place-content-center">ATUALIZAR</button>
+
+        </form>
+    </div>
+
+{% endblock %}
+    

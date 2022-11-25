@@ -1,12 +1,15 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import UpdateView
 
-from ...models import Contrato
+from clientes.models.usuario import Usuario
 
+from ...models import Contrato
+from ...forms import ContratoForm
 
 class ContratoUpdateView(LoginRequiredMixin, UpdateView):
     model = Contrato
-    fields = '__all__'
+    form_class = ContratoForm
+    #fields = '__all__'
     template_name = 'contrato_update.html'
 
     def get_success_url(self):
@@ -20,3 +23,9 @@ class ContratoUpdateView(LoginRequiredMixin, UpdateView):
             just_uri=True,
         )
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context.get('form').fields['cliente'].queryset = Usuario.objects.filter(
+            nivel='Usuario')
+
+        return context
