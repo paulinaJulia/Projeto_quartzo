@@ -1,12 +1,13 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import UpdateView
-
+from ...forms import UsuarioForm
 from ...models import Usuario
 
 
 class ClienteUpdateView(LoginRequiredMixin, UpdateView):
     model = Usuario
-    fields = '__all__'
+    #fields = '__all__'
+    form_class = UsuarioForm
     template_name = 'clientes/cliente_update.html'
 
     def get_success_url(self):

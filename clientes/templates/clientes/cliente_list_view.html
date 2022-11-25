@@ -17,7 +17,8 @@
 
     <!-- Section: Design Block -->
     <section class="py-16 text-gray-800 text-center">
-        <h2 class="text-3xl font-bold mb-40">Lista de Clientes</h2> 
+        <h2 class="text-3xl font-bold mb-40">
+            <a href="http://localhost:8000/" >Lista de Clientes</a></h2> 
         <div class="grid gap-x-6 lg:gap-x-12 md:grid-cols-3 gap-y-24 px-12">
             {% for cliente in object_list %}
             <div class="mb-24 md:mb-0">
@@ -35,16 +36,15 @@
                     <p class="mb-6">{{cliente.cpf}}</p>
                     <ul class="list-inside flex flex-col mx-auto justify-center">
                       <div class="flex items-center justify-center">
-                        <a href="#!" class="px-2">
-                            <img src="../../../static/images/telefone.svg" class="rounded-full mx-auto shadow-lg w-4 h-4" alt="" />
+                        <div class="px-2">
+                            <img src="../../../static/images/telefone.svg" class="rounded-full mx-auto shadow-lg w-4 h-4"title="{{cliente.telefone}}" alt="" />
                            
                             <p class="hidden hover:block">{{cliente.telefone}} </p>
-                      </a>
-                    </a>
-                    <a href="#!" class="px-2">
-                      <img src="../../../static/images/email.png" class="rounded-full mx-auto shadow-lg w-4 h-4" alt="" />
+                        </div>
+                    <div class="px-2">
+                      <img src="../../../static/images/email.png" class="rounded-full mx-auto shadow-lg w-4 h-4"title="{{cliente.email}}"alt="" />
                       <p class="hidden hover:block">{{cliente.email}} </p>
-                      </a>
+                    </div>
                   </div>
                     <a href="{% url 'cliente_detail' cliente.id%}" class="bg-[#08881C]/80 mt-2 block rounded-lg mx-auto hover:bg-[#08881C] px-2">Ver mais</a>
                 

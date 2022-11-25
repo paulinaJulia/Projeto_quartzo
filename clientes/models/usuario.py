@@ -7,7 +7,9 @@ class Usuario (AbstractUser):
 
     nome = models.CharField(
         max_length=100,
-        verbose_name='Nome do Usuario'
+        verbose_name='Nome do Usuario',
+        blank=True,
+        null=True,
     )
 
     cpf = models.CharField(

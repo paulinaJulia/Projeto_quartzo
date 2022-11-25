@@ -37,16 +37,16 @@
                 <p class="mb-6">{{funcionario.cpf}}</p>
                 <ul class="list-inside flex flex-col mx-auto justify-center">
                   <div class="flex items-center justify-center">
-                    <a href="#!" class="px-2">
-                      <img src="../../../static/images/telefone.svg" class="rounded-full mx-auto shadow-lg w-4 h-4" alt="" />
+                    <div class="px-2">
+                      <img src="../../../static/images/telefone.svg" class="rounded-full mx-auto shadow-lg w-4 h-4" title="{{funcionario.telefone}}" alt="" />
 
-                      <p class="hidden hover:block">{{funcionario.telefone}} </p>
-                      </a>
-                    </a>
-                    <a href="#!" class="px-2">
-                      <img src="../../../static/images/email.png" class="rounded-full mx-auto shadow-lg w-4 h-4" alt="" />
+                      <p class="hidden hover:block" >{{funcionario.telefone}} </p>
+                      </div>
+                    
+                    <div class="px-2">
+                      <img src="../../../static/images/email.png" class="rounded-full mx-auto shadow-lg w-4 h-4"title="{{funcionario.email}}" alt="" />
                       <p class="hidden hover:block">{{funcionario.email}} </p>
-                      </a>
+                    </div>
                   </div>
                     <a href="{% url 'funcionario_detail' funcionario.id%}" class="bg-[#08881C]/80 mt-2 block rounded-lg mx-auto hover:bg-[#08881C] px-2">Ver mais</a>
                     
