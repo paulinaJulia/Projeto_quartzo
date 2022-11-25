@@ -2,18 +2,18 @@
 
 <div class="flex flex-col items-center justify-center bg-[#83A7C9] h-screen">
     <h1 class="font-bold text-4xl text-black text-center my-10">Detalhes do contrato</h1>
-    <div class="w-[900px] bg-white/30 h-auto grid grid-cols-3 gap-2">
-    <p>IMOVEL:{{object.imovel}}</p>
-    <p>CLIENTE:{{object.cliente}}</p>
-    <p>FUNCIONARIO:{{object.funcionario}}</p>
-    <p>INICIO:{{object.inicio}}</p>
-    <p>TERMINO:{{object.termino}}</p>
-    <p>VENCIMENTO:{{object.data_vencimento}}</p>
-    <p>SITUAÇÃO:{{object.situacao}}</p>
-    <p>PAGAMENTO{{object.pagamento}}</p>
+    <div class="w-[900px] bg-white/30 h-auto grid grid-cols-3 gap-2 p-8">
+    <p><span class="font-bold">IMOVEL</span>:{{object.imovel}}</p>
+    <p><span class="font-bold">CLIENTE</span>:{{object.cliente}}</p>
+    <p><span class="font-bold">FUNCIONARIO</span>:{{object.funcionario}}</p>
+    <p><span class="font-bold">INICIO</span>:{{object.inicio}}</p>
+    <p><span class="font-bold">TERMINO</span>:{{object.termino}}</p>
+    <p><span class="font-bold">VENCIMENTO</span>:{{object.data_vencimento}}</p>
+    <p><span class="font-bold">SITUAÇÃO</span>:{{object.situacao}}</p>
+    <p><span class="font-bold text-base">PAGAMENTO</span>:{{object.pagamento}}</p>
     </div>
     <div class="flex justify-center items-center gap-2">
-        <a href="{% url 'contrato_update' object.id %}"class="bg-[#08881C]/80 mt-2 block rounded-lg mx-auto hover:bg-[#08881C] px-2" >Editar</a>
-        <a href="{% url 'contrato_delete' object.id %}" class="bg-[#08881C]/80 mt-2 block rounded-lg mx-auto hover:bg-[#08881C] px-2">Deletar</a>
+        <a href="{% url 'contrato_update' object.id %}"class="bg-[#20629E] mt-2 block rounded-lg mx-auto text-white px-2" >Editar</a>
+        <a href="{% url 'contrato_delete' object.id %}" class="bg-[#20629E] mt-2 block rounded-lg mx-auto text-white px-2">Deletar</a>
     </div>
 </div>
