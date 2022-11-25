@@ -13,15 +13,15 @@
     <div class="w-[900px] bg-white/30 h-auto  flex justify-between">
     <div class="bg-white/30 w-full h-[300] flex flex-col items-center justify-center">
         <div class="bg-white/50 w-[400px] h-[300px]  flex flex-col  gap-2"> 
-            <p>NOME:{{object.nome}} </p>
-            <p>CPF:{{object.cpf}}</p>
-            <p>TELEFONE:{{object.telefone}}</p>
-            <p>RUA:{{object.rua}}</p>
-            <p>CIDADE{{object.cidade}}</p>
-            <p>BAIRRO:{{object.bairro}}</p>
-            <p>NUMERO DA CASA:{{object.numero_casa}}</p>
-            <p>EMAIL:{{object.email}}</p>
-            <p>NIVEL:{{object.nivel}}</p>
+            <p><b>NOME: </b>{{object.nome}}</p>
+            <p><b>CPF: </b>{{object.cpf}}</p>
+            <p><b>TELEFONE: </b>{{object.telefone}}</p>
+            <p><b>RUA: </b>{{object.rua}}</p>
+            <p><b>CIDADE: </b>{{object.cidade}}</p>
+            <p><b>BAIRRO: </b>{{object.bairro}}</p>
+            <p><b>NUMERO DA CASA: </b>{{object.numero_casa}}</p>
+            <p><b>EMAIL: </b>{{object.email}}</p>
+            <p><b>NIVEL: </b>{{object.nivel}}</p>
         </div> 
         <div class="flex justify-center items-center gap-2">
             <a href="{% url 'funcionario_update' object.id %}"class="bg-[#08881C]/80 mt-2 block rounded-lg mx-auto hover:bg-[#08881C] px-2" >Editar</a>

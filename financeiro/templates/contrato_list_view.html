@@ -10,28 +10,27 @@
 <body class="bg-[#83A7C9]">
     <div>
         <h1 class="font-bold text-4xl text-black text-center my-10">Lista de Contratos</h1>
-        <div>
-            <p class="text-center"></p>
-            <div class="w-[800px] h-auto bg-white/30 mx-auto space-y-4 p-8">
-                <div class="flex items-center justify-center flex-wrap gap-2"></div>
-               {{object.id}}
-               {{object.imovel}}
-               {{object.cliente}}
-               {{object.funcionario}}
-               {{object.inicio}}
-               {{object.situacao}}
-
-        
+        <div class="flex items-center flex-wrap justify-center w-full">
             {% for contrato in object_list %}
+            <div class="h-auto bg-white/30 mx-auto space-y-4 p-8">
+                <div class="flex items-center justify-center flex-wrap gap-2 px-4"></div>
+                {{object.id}}
+                {{object.imovel}}
+                {{object.cliente}}
+                {{object.funcionario}}
+                {{object.inicio}}
+                {{object.situacao}}
                 <p>{{contrato.imovel}}</p>
                 <p>{{contrato.cliente}}</p>
                 <p>{{contrato.funcionario}}</p>
                 <p>{{contrato.inicio}}</p>
                 <p>{{contrato.situacao}}</p>
-                <a href="{% url 'contrato_detail' contrato.id%}" class="bg-[#08881C]/80 mt-2 block rounded-lg mx-auto hover:bg-[#08881C] px-2">Ver mais</a>
-            {% endfor %}
+                <a href="{% url 'contrato_detail' contrato.id%}" class="bg-[#20629E] rounded-lg mx-auto text-white px-4 block mt-4 py-1 text-center">Ver mais</a>         
             </div>
+            {% endfor %}        
         </div>
+        
     </div>
+    
 </body>
 </html>

@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Delete</title>
 </head>
-<body>
+<body class="bg-blue-200">
     <form method="post">
     {% csrf_token %}
         {{form}}
         
-        <button type="submit" class="btn secondary h-48">delete</button>
+        <button type="submit" class="mx-auto mt-10 text-white font-medium text-2xl bg-[#20629E] w-96 rounded-3xl grid place-content-center">Deletar funcionário</button>
         </form>
 </body>
 </html>
